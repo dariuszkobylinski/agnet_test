@@ -198,7 +198,7 @@ const ContactForm = () => {
     };
     return (
         <form name="MyForm" action="https://formspree.io/xzbgalwz" onSubmit={handleSubmit} method="POST" className="message-footer">
-                <h3 className="h3TextLeft">Masz pytania, napisz do nas e-mail lub zadzwoń.</h3>
+                <h3 className="h3TextLeft">Zapytaj o pierwszą wizytę? Napisz do mnie</h3>
                 <input type="text" name="imienazwisko" className="classImieNazwisko"
                        placeholder="Imię i Nazwisko*" value={formData.imienazwisko} onChange={handleChange}/>
                 <input type="email" name="adresEmail" className="classEmail" placeholder="E-mail*" value={formData.adresEmail} onChange={handleChange}/>
@@ -223,20 +223,6 @@ const FooterMain = () => {
             <div className="footer_summary">
             <div className="footerMain">
                 <div className="footerPartLeftRight">
-                <div className="footerPartLeft">
-                    <a href="ONas.html" className="footerPartLeftDetail">O Nas</a>
-                    <a href="index.html" className="footerPartLeftDetail">Żeglarstwo</a>
-                    <a href="index.html" className="footerPartLeftDetail">Rejsy turystyczne</a>
-                    <a href="index.html" className="footerPartLeftDetail">Kolonie, obozy</a>
-                    <a href="Kontakt.html" className="footerPartLeftDetail">Kontakt</a>
-                </div>
-                <div className="footerPartRight">
-                    <a href="Regulamin.html" className="footerPartRightDetail">Regulamin</a>
-                    <a href="Bezpieczenstwo.html" className="footerPartRightDetail">Polityka prywatności</a>
-                    <a href="Bezpieczenstwo.html" className="footerPartRightDetail">Informacje o cookies</a>
-                    <a href="MetodyPlatnosci.html" className="footerPartRightDetail">Metody płatności</a>
-                    <a href="JakKupowac.html" className="footerPartRightDetail">Jak kupować</a>
-                </div>
                 </div>
                 <div className="classSocialContact">
                 <p className="centerOfInformation">Centrum informacji <br></br>+48 518 836 336</p>

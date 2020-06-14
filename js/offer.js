@@ -3,12 +3,10 @@ import ReactDOM from "react-dom";
 import "../main.scss";
 import "./slider_manager";
 import "../normalize.css";
-import {FooterMain} from "./contact";
-import {Popup} from "./saleForm";
-import sourceTable from "./data/deteilOfOffers";
-import numberOfOrders from "./slider_manager";
+import {FooterMain, ContactForm} from "./contact";
 
-var tableOfFilter=sourceTable;
+
+
 
 const BurgerClick = (e) => {
     let burgerEvent=document.querySelector(".classItem");
@@ -27,20 +25,20 @@ const Header = () => {
     return (
         <header className="page-header">
                 <div className="slider">
-                        <img className="box_image_slider visible" src={"images/pictureTop.jpg"} alt="Slider"/>
-                        <img className="box_image_slider" src={"images/pictureTop_second.jpg"} alt="Slider"/>
-                        <img className="box_image_slider" src={"images/pictureTop_threetenth.jpg"} alt="Slider"/>
-                        <img className="box_image_slider" src={"images/rope_picture.jpg"} alt="Slider"/>
+                        <img className="box_image_slider visible" src={"images/flowers-2562079_1920.jpg"} alt="Slider"/>
+                        <img className="box_image_slider" src={"images/hands-2847508_1920.jpg"} alt="Slider"/>
+                        <img className="box_image_slider" src={"images/flowers-2562079_1920.jpg"} alt="Slider"/>
+                        <img className="box_image_slider" src={"images/hands-2847508_1920.jpg"} alt="Slider"/>
                 </div>
                 <div className="classLogoContact">
 
                 <div className="contact">
 
-                    <p className="text_contact">Zadzwoń lub napisz<br></br>+48 518 836 336<br></br><a href="mailto:mdinvestments2018@gmail.com">mdinvestments2018@gmail.com</a></p>
+                    <p className="text_contact">Zadzwoń lub napisz<br></br>+48 501 ... ...<br></br><a href="mailto:">info@agnet-fiziterapia.pl</a></p>
                 </div>  
                 <div className="page-logo">
                     <a href="../index.html" style={{height: "0px"}}>
-                        <img className="box_image" src={"images/logo_2.jpg"} alt="Logo"/>
+                        <img className="box_image" src={"images/logo_2.png"} alt="Logo"/>
                     </a>
                 </div>
                 </div>
@@ -53,17 +51,11 @@ const Header = () => {
                 </div>
                 <ul className="classItem">
                     <li className="classLink">
-                        <a href="ONas.html" className="classLinkHref" target="_parent">O Nas</a>
+                        <a href="ONas.html" className="classLinkHref" target="_parent">O mnie</a>
                     </li>
                     <li className="classLink">
                         <a href="index.html" className="classLinkHref" id="keyPageWord"
                            target="_parent" style={{color:"darkorange"}}>Oferta</a>
-                    </li>
-                    <li className="classLink">
-                        <a href="JakKupowac.html" className="classLinkHref" target="_parent" >Jak kupować</a>
-                    </li>
-                    <li className="classLink">
-                        <a href="Bezpieczenstwo.html" className="classLinkHref" target="_parent" >Bezpieczeństwo</a>
                     </li>
                     <li className="classLink">
                         <a href="Kontakt.html" className="classLinkHref" target="_parent">Kontakt</a>
@@ -74,249 +66,84 @@ const Header = () => {
         )
 };
 
-const MainOffer = () => {
-
- 
-const MyValueFunc = () => {
-    
-    tableOfFilter=[];
-
-    let categoryOfChoose=document.querySelectorAll(".classCategoryofChoose");
-    
-    let kindOfChoose = categoryOfChoose[0].value;
-    let placeOfChoose=categoryOfChoose[1].value;
-    let timeOfChoose=categoryOfChoose[2].value;
-    let typeOfChoose=categoryOfChoose[3].value;
-
-    // console.log(kindOfChoose+" "+placeOfChoose+" "+timeOfChoose+" "+priceOfChoose);
-
-    for (let i=0;i<sourceTable.length;i++) {
-         if ((kindOfChoose===sourceTable[i].CategoryOfProduct || kindOfChoose==="Wszystkie kategorie") && 
-         (placeOfChoose===sourceTable[i].PlaceOfCourse || placeOfChoose==="Wszystkie miejsca") && 
-         (timeOfChoose===sourceTable[i].TimingOfCourse || timeOfChoose==="Wszystkie miesiące") &&
-         (typeOfChoose===sourceTable[i].TypeOfCourse || typeOfChoose==="Wszystkie rodzaje")) 
-         {
-         tableOfFilter.push(sourceTable[i]);
-        }  
-    };
-    console.log("Tablica last: ",tableOfFilter);
+const MainPricing = () => {
     return (
-        // console.log("AAAAAA",MyFunc()),
-        ReactDOM.render(
-            <App />,
-            document.getElementById("app")
-        )   
-    )   
-}
+        <div className="mainPricing" style={{padding:"0px"}}>
+            <article className="info_Pricing">
+                <h2 className="h2Text" style={{padding:"10px", display:"none"}}>Lorem ipsum dolor sit amet.</h2>
+                <img className="classPricing" src="images/pricing.png"/>
+            </article>
+        </div>
+    )
+};
 
-const myHoverAction = (e) => {
-
-    let PmyHoverAction=document.querySelectorAll(".pclassInformationOfProductDetail");
-    let BtnMyHoverAction=document.querySelectorAll(".classBtnProductReturn");
-        // var positionY=(window.scrollY);
-        // console.log(positionY);
-        
-        PmyHoverAction[(e.target.getAttribute("id"))].classList.toggle("classMyHoverAction");
-        BtnMyHoverAction[(e.target.getAttribute("id"))].style.visibility="visible";
-        };
-
-        const myHoverActionButton = (e) => {
-
-            let BtnMyHoverActionDetail= document.querySelectorAll(".classBtnProductReturn");   
-            let PmyHoverAction=document.querySelectorAll(".pclassInformationOfProductDetail");
-            let BtnMyHoverAction=document.querySelectorAll(".classBtnProductReturn");
-                // var positionY=(window.scrollY);
-                // console.log(positionY);
-                let myIdNumber=e.target.getAttribute("id");
-                PmyHoverAction[myIdNumber].classList.toggle("classMyHoverAction");
-                BtnMyHoverAction[myIdNumber].style.visibility="visible";
-                };
-
-const myHoverCloseAction = (e) => {
-
-    let PmyHoverAction=document.querySelectorAll(".pclassInformationOfProductDetail");
-    // PmyHoverAction[(e.target.getAttribute("id"))].classList.toggle("classMyHoverAction")
-    let BtnMyHoverAction=document.querySelectorAll(".classBtnProductReturn");
-    for (let i=0;i<PmyHoverAction.length;i++) {
-        PmyHoverAction[i].classList.remove("classMyHoverAction");
-        BtnMyHoverAction[i].style.visibility="hidden";
-    }
-    // console.log("to jest pozycja",positionY);
-    // window.scrollTo(0,positionY);
-    };
-
-
-const myReservation = (e) => {
-    var tableOfSales=[];
-    let ids = e.target.getAttribute("id");
-    console.log(ids);
-    tableOfSales.push(tableOfFilter[ids]);
-    
-
-    // console.log("tabela1",tableOfSales[0].idOfOffer);
-    // console.log("tabela",tableOfSales[0]);
-    
-    let myPopup=document.querySelector(".classPopup");
-    let myPopupDetail=document.querySelector(".classPopupDetail");
-    let pClassOrderDetails=document.querySelectorAll(".pclassOrderDetails");
-    let myBtnOrderCancel=document.querySelector(".classBtnProductOrder");
-    let messageToCUstomer=document.querySelector(".classMessageToCustomer");
-    console.log(pClassOrderDetails[0]);
-
-    myPopup.style.visibility="visible";
-    myPopupDetail.style.visibility="visible";
-    myBtnOrderCancel.style.visibility="visible";
-    console.log(numberOfOrders);
-
-    // pClassOrderDetails[0].innerHTML="Numer zamówienia: "+numberOfOrders[numberOfOrders.length-1]+1;
-    pClassOrderDetails[1].innerHTML="Kategoria kursu: "+tableOfSales[0].CategoryOfProduct;
-    pClassOrderDetails[2].innerHTML="Miejsce kursu: " +tableOfSales[0].PlaceOfCourse;
-    pClassOrderDetails[3].innerHTML="Data rozpoczęcia: " +tableOfSales[0].DateOfStart;
-    pClassOrderDetails[4].innerHTML="Data zakończenia: " +tableOfSales[0].DateOfEnd;
-    pClassOrderDetails[5].innerHTML="Miesiąc kursu: " +tableOfSales[0].TimingOfCourse;
-    pClassOrderDetails[6].innerHTML="Cena kursu: "+tableOfSales[0].PriceOfCourse+" zł";
-    messageToCUstomer.value="Dzień Dobry."+" "+"Dziękujemy za złożenie zamówienia o numerze: "+numberOfOrders[numberOfOrders.length-1]+1+" na "+
-    tableOfSales[0].CategoryOfProduct+" "+", które będzie realizowany "+tableOfSales[0].PlaceOfCourse+" w miesiącu "+tableOfSales[0].TimingOfCourse+"-Data startu: "+tableOfSales[0].DateOfStart+" Data zakończenia: "
-    +tableOfSales[0].DateOfEnd+". Cena kursu to "+tableOfSales[0].PriceOfCourse+" zł. Proszę o wpłatę zaliczki w celu potwierdzenia rezerwacji. Pozdrawiamy. Zespół e-Market";
-
-
-    let myClassErrorClean=document.querySelectorAll(".liClassErrorMessage");
-    for (let i=0;i<myClassErrorClean.length;i++) {
-               myClassErrorClean[i].style.visibility="visible";
-    }
-    } 
-
-const MyFunc = () => { 
-    let z=[]; 
-    console.log("MyFuncPrzejście",tableOfFilter)
-    for (let i=0;i<tableOfFilter.length;i++) {
-    let y = 
-    <div className="classViewofProduct">
-                {/* <div className="classProductImgMain">
-                    <img className="classProductImg" src="images/logo_2.jpg"/>
-                    <p className="classImgPromotion">Kurs weekendowy</p>
-                </div> */}
-                <div className="classProductDetail" id={i}>
-                        <div className="classInformationOffer">
-                            <div className="classMainProductInformation">
-                            <p className="classCategoryStyle">Kategoria:<br></br> {tableOfFilter[i].CategoryOfProduct}</p>
-                            {/* <p className="classCategoryStyle">Kurs<br></br> weekendowy</p> */}
-                            <p className="classCategoryStyle">Miejsce: <br></br> {tableOfFilter[i].PlaceOfCourse}</p>
-                            <p className="classCategoryStyle">Termin: <br></br>{tableOfFilter[i].DateOfStart}- {tableOfFilter[i].DateOfEnd}</p>
-                            <p className="classCategoryStyle">Cena: <br></br>{tableOfFilter[i].PriceOfCourse} zł</p>
-            
-                            </div>
-                            <div className="classInformationOfProductDetail" >
-                                
-                                <p className="pclassInformationOfProductDetail" id={i} onMouseLeave={myHoverCloseAction}>
-                                    <img className="classProductImg" src={tableOfFilter[i].PictureForCourse}/> 
-                                <p style={{color:"black", display:"inline-block", fontWeight:"bold", margin:"0px", fontStyle:"italic", marginRight:"5px"}}>
-                                    Oferta:</p>{tableOfFilter[i].InformationAboutCourse} <br></br> 
-                                <p style={{color:"black", display:"inline-block", fontWeight:"bold", margin:"0px", fontStyle:"italic", marginRight:"5px"}}>
-                                    Informacje o dostawcy:</p>{tableOfFilter[i].InformationAboutSuppliers} <br></br>
-                                 <br></br>
-                                 <button className="classBtnProductReturn" onClick={myHoverCloseAction} id={i} >Zamknij</button>
-                                  <br></br>
-                                 <button onClick={myReservation} className="classBtnProduct" id={i}>Rezerwuj</button>
-                                </p>
-                                <button className="classBtnProductDetails" onClick={myHoverActionButton} id={i} >Rozwiń...</button>
-                                <button onClick={myReservation} className="classBtnProduct" id={i}>Rezerwuj</button>
-                            </div>
-                        </div>
-                </div> 
-            </div>;
-
-    z.push(y);
-    
-    }
+const Main = () => {
     return (
         <>
-            {z} 
+        <article className="info" style={{fontSize:"0.9em", lineHeight:"1.35", color:"black"}}>
+        Poszukujesz terapii dla siebie bądź dla Twoich bliskich? Dobrze trafiłeś, na tej stronie znajdziesz niezbędne informacje o metodzie bazującej na 
+        odruchach, którą stosuję. Poniżej znajdziesz więcej szczegółów, a w razie jakikolwiek pytań zostańmy w kontakcie.
+        </article>
+        <div className="main">
+            <article className="info" style={{fontSize:"0.9em", lineHeight:"1.35"}}>
+                <h2 className="h2Text" style={{fontSize:"1.2em"}}>Jak powstała terapia MNRI i do kogo jest kierowana</h2>
+                Terapie prowadzone przez mnie opierają się na Neurosensomotorycznej Integracji Odruchów wg dr Masgutowej (zwana również MNRI - Masgutova 
+                neurosensorimotor reflex integration) i jest to interdyscyplinarny program terapeutyczno-rehabilitacyjny. Metoda została opracowana dr 
+                Swietlanę Masgutową, która jest doktorem psychologii rozwojowej i edukacyjnej oraz Dyrektorem Międzynarodowego Instytutu dr Swietlany 
+                Masgutowej prowadzonego w Polsce i Stanach Zjednoczonych. Absolwentka Instytutu Psychologii Ogólnej i Rozwojowej Rosyjskiej Akademii Edukacji 
+                i autorka ponad 100 prac naukowo-praktycznych. Założeniem metody jest usprawnianie zaburzonych schematów odruchów uniemożliwiających harmonijny 
+                rozwój motoryczny, sensomotoryczny, poznawczy. Szczególnie zalecana jest dla pacjentów z: <br></br>
+                    • autyzmem i spektrum autyzmu, <br></br>
+                    • uszkodzeniami mózgu i porażeniem mózgowym,<br></br>
+                    • nadpobudliwością psychoruchową (ADHD i ADD),<br></br>
+                    • lękami i fobiami,<br></br>
+                    • opóźnieniem i zaburzeniami mowy,<br></br>
+                    • stresem pourazowym,<br></br>
+                    • trudnościami w nauce i dysleksji. <br></br>
+                Ze wspomnianego programu korzystają specjaliści w ponad 40 krajach na świecie, a jego twórczyni za skuteczną pracę i entuzjazm otrzymała 12 
+                nagród i wyróżnień uniwersyteckich Rosyjskiej Akademii Edukacyjnej. W 1996 roku została uhonorowana międzynarodową nagrodą Fundacji 
+                Kinezjologii Edukacyjnej w Stanach Zjednoczonych a w roku 2007 publikacja „You Are a Winner - Trauma Recovery – A New Choise Trough Natural 
+                Development Movement” otrzymała nagrodę stanową (USA) Iowa 2007” Wydawnictwa 1-st World Publishing.
+            </article>
+            <article className="info" style={{fontSize:"0.9em", lineHeight:"1.35"}}>
+                <h2 className="h2Text" style={{fontSize:"1.2em"}}>Opis metody</h2>
+                Terapia MNRI jest unikalną metodą stosowaną w leczeniu dzieci i dorosłych na całym świecie, a w szczególności zyskała popularność w Stanach 
+                Zjednoczonych. Jej stosowanie wspiera rozwój psychoruchowy, zaburzenia narządów mowy i słuchu oraz koordynację psychoruchową. Najnowsze 
+                badania naukowe przeprowadzone przez niezależne laboratoria w USA dowodzą skuteczność metody, m. in. wpływ na detoksykację mózgu, poprawia 
+                pracę fal mózgowych, reguluje pracę neurotransmiterów, wpływa na obniżenie stresu, co wpływa pozytywnie na funkcjonowanie całego organizmu. 
+                Metoda wspiera rozwój dzieci, młodzieży i dorosłych a jej główne założenia bazują na usprawnianiu zaburzonych schematów odruchów 
+                uniemożliwiających harmonijny rozwój motoryczny, sensomotoryczny, poznawczy.
+                Terapia MNRI to fundamentalny i pierwszy krok we wczesnej interwencji dzieci 
+                z zaburzeniami neurozowojowymi a jej głównym celem na który skupiam się podczas terapii to: <br></br>
+                    • stymulacja zmysłu dotyku i pripriocepcji, <br></br>
+                    • integracja odruchów dynamicznych i postularnych, <br></br>
+                    • integracja półkul,<br></br>
+                    • tworzenie i torowanie spontanicznych, fizjologicznych reakcji adaptacyjnych poprawiających funkcjonowanie i integrację reakcji 
+                    wywołanych przez bodźce,<br></br>
+                    • rozwój bazowych oraz całościowych schematów ruchowych,<br></br>
+                    • kształtowanie się postawy i struktury ciała,<br></br>
+                    • regulacja stresu<br></br>
+            </article>
+            <article className="info" style={{fontSize:"0.9em", lineHeight:"1.35"}}>
+                <h2 className="h2Text" style={{fontSize:"1.2em"}}>Efekty po wdrożeniu terapii</h2>
+                Jak pisałem w zakładce o Mnie jestem mamą Kacpra u którego został zdiagnozowany autyzm. Zanim do tego doszło poszukiwałam pomocy w różnych 
+                instytucjach od … do. Mimo dużego wysiłku i poświęconego czasu osiągnęłam bardzo słabe efektyw rozwoju dziecka. W roku 2009 rozpoczęłam 
+                terapię MNRI z synem, po upływie kilku miesięcy efekty były imponujące a życie mojego dziecka stało się prostsze. Poniżej przedstwiam 
+                przykłady zmian jakie udało Nam się osiągnąć. Zaobserwowane zmiany:
+                Kokontrakcja, czyli uruchamianie mięśni do siły bodźca <br></br>
+                od: Miał trudności z dostosowaniem reakcji, uruchamiał po ok. 10 sek do: Nie stawiał oporu <br></br>
+                Test palce-kciuk<br></br>
+                    od: Nie odtwarzał prawidłowej sekwencji ruchu, nie stykał palców częściami dystalnymi do: Gubił sekwencję ruchu, omijał palec serdeczny
+                    Rotacja przedramion
+                    Ruchy szarpane, nadmiar i niepełny zasięg
+                    Wykonał 5 pełnych ruchów, prawą ręką w ciągu 10 sek., lewą 3 ciągu 10 sek. Obiema nie potrafił. Wynik poniżej normy wiekowej, (w normie 8 ruchów/10 sek.)     
+            </article>
+            <article className="info" style={{fontSize:"0.9em", lineHeight:"1.35"}}>
+                <h2 className="h2Text" style={{fontSize:"1.2em"}}>Cennik</h2>
+                <img className="classPricing" src="images/pricing.png" style={{width:"80%", alignItems:"center"}}/>
+            </article>
+        </div>
         </>
-        
-    )
-}
-    return (   
-    <>
-    <div className="mainOffer">
-        <div className="classParametersofChoose">
-            {/* <div class="classDivCategoryofChoose">
-                <h2 class="classH2CategoryofChoose">Filtruj według:</h2>
-                <h3 class="classH3CategoryofChoose">Kategorii kursu</h3>
-                <select class="classCategoryofChoose">
-                    <option>Wszystkie kategorie</option>
-                    <option>Żeglarstwo</option>
-                    <option>Nurkowanie</option>
-                    <option>Programowanie</option>
-                </select>
-            </div> */}
-            <div className="classKindofChoose">
-                <h3 className="h3TextFilter">Wybierz kategorię</h3>
-                <select className="classCategoryofChoose" onChange={MyValueFunc}>
-                    <option>Wszystkie kategorie</option>
-                    <option>Żeglarz Jachtowy</option>
-                    <option>Sternik Morski</option>
-                    <option>Sternik Motorowodny</option>
-                    {/* <option>Holowanie narciarza</option>
-                    <option>Narty wodne</option> */}
-                </select>
-            </div>
-            <div className="classPlaceofChoose">
-                <h3 className="h3TextFilter">Wybierz miejsce</h3>
-                <select className="classCategoryofChoose" onChange={MyValueFunc}>
-                    <option>Wszystkie miejsca</option>
-                    <option>J. Dzierżno Małe</option>
-                    <option>J. Żywieckie</option>
-                    <option>Kraków/ Wawel</option>
-                    {/* <option>Mazury</option> */}
-                    <option>Mazury-J. Nidzkie</option>
-                    <option>Mazury-J. Święcajty</option>
-                    <option>Olsztyn J. Ukiel</option>
-                    <option>Zalew Rzeszowski</option>
-                    <option>Zalew Sulejowski</option>
-                    <option>Zalew Zek</option>
-                    <option>Zalew Zegrzyński</option>
-                    <option>Zalew Zemborzycki</option>
-                    
-                </select>
-            </div>
-            <div className="classTimeofChoose">
-            <h3 className="h3TextFilter">Wybierz termin</h3>
-            <select className="classCategoryofChoose" onChange={MyValueFunc}>
-               
-                <option>Wszystkie miesiące</option>
-                {/* <option>Styczeń</option>
-                <option>Luty</option>
-                <option>Marzec</option>
-                <option>Kwiecień</option>
-                <option>Maj</option> */}
-                <option>Czerwiec</option>
-                <option>Lipiec</option>
-                <option>Sierpień</option>
-                <option>Wrzesień</option>
-                <option>Październik</option>
-                <option>Listopad</option>
-                <option>Grudzień</option>
-            </select>
-            </div>
-
-            <div className="classPriceofChoose">
-                <h3 className="h3TextFilter">Wybierz rodzaj</h3>
-                <select className="classCategoryofChoose" onChange={MyValueFunc}>
-                    <option>Wszystkie rodzaje</option>
-                    <option>Dzienny</option>
-                    <option>Weekendowy</option>
-                    
-                </select>
-            </div>
-            <button className="classBtnCategoryofChoose" onClick={MyValueFunc}>Filtruj</button>
-        </div>
-        
-        <div className="classViewofProductMain">
-            <MyFunc/>
-        </div>
-    </div>   
-    </>
     )
 };
 function App() {
@@ -324,9 +151,9 @@ function App() {
         <>
             <div className="container">
             <Header />
-            <MainOffer/>
+            <Main/>
+            <ContactForm/>
             <FooterMain/>
-            <Popup/>
             </div>
         </>
     )
@@ -338,8 +165,7 @@ ReactDOM.render(
 export {
     App,
     Header,
-    MainOffer,
+    Main,
     FooterMain,
     BurgerClick
-
 };
